@@ -1,3 +1,24 @@
+# RailScope - OPEN TASKS (checklist index, 2026-10-06)
+
+This file is a notes-style log. The checklist below is the quick index of what is still open; details live in the sections it points to. `[!]` = needs a decision or a human check first.
+
+- [ ] Add `functions/api/vehicles.ts` (port the handler from `server.ts`), add a root `wrangler.toml` with `nodejs_compat`, then point `VEHICLES_API_BASE` back at same-origin
+- [ ] Lazy-load `Map.tsx` and `Feed.tsx` with `React.lazy` (bundle is one ~2.4 MB chunk)
+- [ ] Cull vehicle markers outside the padded map bounds (1000-2000 DOM markers on phones)
+- [ ] Keep the map mounted across tab switches (it loses pan/zoom and restarts polling)
+- [ ] Stop `stationMarkers` rebuilding all ~600 markers when a popup opens
+- [ ] Add a fetch timeout and a "waking up" indicator for the Render cold start (~50 s on first map load)
+- [ ] Wire the Service Details "Alerts" tab to the TfNSW `/v1/gtfs/alerts` feed (currently hardcoded "No Active Alerts")
+- [ ] Fix the theme flash on first render (guard `resolvedTheme` with a mounted check)
+- [ ] Route-shape following on the map (needs GTFS `shapes.txt` or a shapes endpoint), a "Show all services" toggle, and a "View in map" button on Service Details
+- [ ] Fix the `vehicleId` fallback (`veh-${index}` uses different index bases in two places)
+- [ ] Hygiene: remove unused deps (`@google/genai`, `react-window`, `react-virtualized-auto-sizer`), move `shadcn` out of `dependencies`, delete scratch files (`test-gtfs.ts`, `trip.json`, `find_stops.cjs`)
+- [ ] Localise the splash/header logos from `i.ibb.co` into `public/`; pick one source for the header download links (hardcoded `fushigi` tag vs README `/releases`)
+- [!] Decide whether Cloudflare is being retired; if so point web `API_BASE` at Render and drop `functions/`
+- [!] Admin task: clear the Network Feed (tap the header 7 times, then "Clear Feed"), or ask for a one-shot Admin SDK script
+
+---
+
 # RailScope — TODO
 
 ## 🗺️ Live service simulation on the map (BIG — own work session)
