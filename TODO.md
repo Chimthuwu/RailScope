@@ -120,3 +120,6 @@ switch `VEHICLES_API_BASE` back to same-origin.
 - Search race guard; virtualizer `estimateSize`
 - iOS: search input attributes, `viewport-fit=cover`, `h-screen` fallback
 - WebGL fallback to raster; local favicon
+
+## Inbox (agent-proposed)
+
